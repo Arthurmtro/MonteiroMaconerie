@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 interface IFacebookIcon {
-  size?: number;
+  size?: number
 }
 
 const FacebookIcon = ({ size }: IFacebookIcon) => {
@@ -28,11 +28,11 @@ const FacebookIcon = ({ size }: IFacebookIcon) => {
 		c-2.762,0-5,2.238-5,5v50.844C76.703,162.867,78.941,165.106,81.703,165.106z"
       />
     </svg>
-  );
-};
+  )
+}
 
 const Path = styled.path`
   fill: #fff;
-`;
+`
 
-export default FacebookIcon;
+export default FacebookIcon

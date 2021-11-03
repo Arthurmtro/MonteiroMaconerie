@@ -1,5 +1,6 @@
-import Head from 'next/head';
-import HeroSlider from '../components/HeroSlider';
+import Head from 'next/head'
+import HeroSlider from '../components/HeroSlider'
+import Section from '../components/Section'
 
 export default function Home() {
   return (
@@ -11,9 +12,14 @@ export default function Home() {
       </Head>
 
       <main>
-        <HeroSlider />
-        awoidjhaio wd aWDJa wdj a wd awd a wd a
+        <HeroSlider idToGo="quick-overview" />
+        <Section id="quick-overview">
+          <>
+            sheeeshhh adawd aw
+            <div>d</div>
+          </>
+        </Section>
       </main>
     </>
-  );
+  )
 }

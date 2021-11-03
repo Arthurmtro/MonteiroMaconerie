@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 interface IPlusIcon {
-  size?: number;
+  size?: number
 }
 
 const PlusIcon = ({ size }: IPlusIcon) => {
@@ -13,11 +13,11 @@ const PlusIcon = ({ size }: IPlusIcon) => {
         <Line id="Line_2" data-name="Line 2" y2="11.817" transform="translate(712.346 90.5)" fill="none" strokeWidth="1.8" />
       </g>
     </svg>
-  );
-};
+  )
+}
 
 const Line = styled.line`
   stroke: var(--theme-alt);
-`;
+`
 
-export default PlusIcon;
+export default PlusIcon

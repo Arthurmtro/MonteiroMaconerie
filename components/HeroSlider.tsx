@@ -1,10 +1,25 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-interface IHeroSliderProps {}
+import Button from '../components/Link'
 
-export default function HeroSlider({}: any) {
+interface IHeroSliderProps {
+  idToGo: string
+}
+
+// TODO: ADD slider animation on hover (slide ease-in)
+
+export default function HeroSlider({ idToGo }: IHeroSliderProps) {
   return (
     <Hero>
+      <HeroText>
+        <Quote>Bienvenue</Quote>
+        <Title>
+          sas monteiro
+          <br /> maconnerie
+        </Title>
+        <Description>Maconnerie des mauges, dans le 49 et 44 represente</Description>
+        <Button text="En voir plus" href={`#${idToGo}`} />
+      </HeroText>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -39,7 +54,7 @@ export default function HeroSlider({}: any) {
               width={1024 * 1.7}
               height={546 * 1.7}
               transform="translate(550 145)"
-              xlinkHref="https://www.lesmaconsparisiens.fr/wp-content/uploads/2019/01/les-macons-parisiens-au-travail-1024x546.jpg"
+              xlinkHref="/images/hero_slider_01.jpg"
             />
             <PathSecondary
               id="Overlay-3"
@@ -59,25 +74,50 @@ export default function HeroSlider({}: any) {
         </g>
       </svg>
     </Hero>
-  );
+  )
 }
 
 const Hero = styled.div`
-  overflow: hidden;
-
   & svg {
-    height: 100%;
+    z-index: -10;
+    height: 90%;
     width: 100%;
   }
-`;
+`
+
+const HeroText = styled.div`
+  position: absolute;
+  top: 35vh;
+  left: calc(50vw - 30em);
+`
+
+const Quote = styled.blockquote`
+  color: var(--theme-background-secondary);
+  border-left: 3px solid var(--theme-background-secondary);
+  padding-left: 10px;
+  font-size: var(--font-size-medium);
+`
+
+const Title = styled.h1`
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: var(--font-size-title);
+  margin-left: 0.3em;
+`
+
+const Description = styled.h4`
+  font-weight: 200;
+  font-size: var(--font-size-small);
+  margin-bottom: 2em;
+`
 
 const Rect = styled.rect`
   fill: var(--theme-background-primary);
-`;
+`
 const PathPrimary = styled.path`
   fill: var(--theme-background-primary);
-`;
+`
 
 const PathSecondary = styled.path`
   fill: var(--theme-background-secondary);
-`;
+`

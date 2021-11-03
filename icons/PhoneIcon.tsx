@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 interface IPhoneIcon {
-  size?: number;
+  size?: number
 }
 
 const PhoneIcon = ({ size }: IPhoneIcon) => {
@@ -41,11 +41,11 @@ const PhoneIcon = ({ size }: IPhoneIcon) => {
         />
       </g>
     </svg>
-  );
-};
+  )
+}
 
 const Path = styled.path`
   stroke: var(--theme-alt);
-`;
+`
 
-export default PhoneIcon;
+export default PhoneIcon

@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 interface IMailIcon {
-  size?: number;
+  size?: number
 }
 
 const MailIcon = ({ size }: IMailIcon) => {
@@ -18,11 +18,11 @@ const MailIcon = ({ size }: IMailIcon) => {
         strokeWidth="1"
       />
     </svg>
-  );
-};
+  )
+}
 
 const Path = styled.path`
   stroke: var(--theme-alt);
-`;
+`
 
-export default MailIcon;
+export default MailIcon

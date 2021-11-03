@@ -1,15 +1,15 @@
-import DefaultLink from 'next/link';
-import styled from 'styled-components';
+import DefaultLink from 'next/link'
+import styled from 'styled-components'
 
 interface ILinkProps {
-  text: string;
-  as?: string;
-  href?: string;
+  text: string
+  as?: string
+  href?: string
 }
 
 export default function Link({ text, as = 'button', href = '/' }: ILinkProps) {
   function handleClick() {
-    console.log('CLICKED BITCH');
+    console.log('CLICKED BITCH')
   }
 
   return (
@@ -38,7 +38,7 @@ export default function Link({ text, as = 'button', href = '/' }: ILinkProps) {
         </DefaultLink>
       )}
     </LinkStyle>
-  );
+  )
 }
 
 const LinkStyle = styled.div`
@@ -46,7 +46,7 @@ const LinkStyle = styled.div`
     text-transform: uppercase;
     cursor: pointer;
   }
-`;
+`
 
 const Button = styled.button`
   background-color: var(--theme-background-secondary);
@@ -56,7 +56,7 @@ const Button = styled.button`
   &:hover {
     background-color: var(--theme-background-secondary);
   }
-`;
+`
 
 const Anchor = styled.a`
   color: var(--theme-primary);
@@ -65,4 +65,4 @@ const Anchor = styled.a`
   display: flex;
   align-content: center;
   justify-content: center;
-`;
+`

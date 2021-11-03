@@ -1,22 +1,37 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   :root {
     --theme-background-primary: #463F32;
     --theme-background-secondary: #BF6130;
-    --theme-primary: #fffffff7;
+    --theme-primary: #FFFFFFF7;
     --theme-secondary: #00173C;
     --theme-alt: #0BBF53;
     --theme-link-primary: #DF9629;
 
+    --theme-white: #FFFFFB;
+    --theme-dark: #1C160D;
+
     // Default
-    --font-size-title: calc(2.5rem);
+    --font-size-title: calc(3rem);
     --font-size-medium: calc(1.1875rem);
     --font-size-small : calc(0.8rem);
   }
 
   html {
-    background: #fffffB;
+    background: var(--theme-white);
+
+    &::-webkit-scrollbar {
+        width: 16px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background-color: var(--theme-background-secondary);
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--theme-background-primary);
+    }
   }
 
   * {
@@ -30,6 +45,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: Wotfard, Futura, -apple-system, sans-serif;
     color: var(--theme-primary);
   }
-`;
+`
 
-export default GlobalStyle;
+export default GlobalStyle

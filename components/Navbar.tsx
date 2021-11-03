@@ -1,12 +1,12 @@
-import styled from 'styled-components';
-import DefaultLink from 'next/link';
-import Image from 'next/image';
+import styled from 'styled-components'
+import DefaultLink from 'next/link'
+import Image from 'next/image'
 
-import Link from './Link';
-import PlusIcon from '../icons/PlusIcon';
-import MailIcon from '../icons/MailIcon';
-import PhoneIcon from '../icons/PhoneIcon';
-import FacebookIcon from '../icons/FacebookIcon';
+import Link from './Link'
+import PlusIcon from '../icons/PlusIcon'
+import MailIcon from '../icons/MailIcon'
+import PhoneIcon from '../icons/PhoneIcon'
+import FacebookIcon from '../icons/FacebookIcon'
 
 export default function Navbar() {
   return (
@@ -112,12 +112,12 @@ export default function Navbar() {
         <Link text="Prendre RDV" href="/contact" />
       </DesktopNav>
     </Header>
-  );
+  )
 }
 
 const Header = styled.nav`
   background: linear-gradient(to right, var(--theme-background-secondary) 30%, #fffffb 30%);
-`;
+`
 
 const QuickNav = styled.div`
   padding: 0.2em 0;
@@ -129,7 +129,7 @@ const QuickNav = styled.div`
     justify-content: space-between;
     margin: 0 auto;
   }
-`;
+`
 
 const ContactInfos = styled.div`
   * {
@@ -146,7 +146,7 @@ const ContactInfos = styled.div`
   & svg {
     margin-right: 0.5em;
   }
-`;
+`
 
 const SocialNetworks = styled.div`
   & a {
@@ -156,7 +156,7 @@ const SocialNetworks = styled.div`
     justify-content: space-around;
     align-items: center;
   }
-`;
+`
 
 const DesktopNav = styled.div`
   max-width: 1280px;
@@ -164,7 +164,7 @@ const DesktopNav = styled.div`
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
-`;
+`
 
 const Links = styled.ul`
   display: flex;
@@ -192,6 +192,6 @@ const Links = styled.ul`
       }
     }
   }
-`;
+`
 
-const Logo = styled(Image)``;
+const Logo = styled(Image)``

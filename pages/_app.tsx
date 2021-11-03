@@ -1,6 +1,6 @@
-import Navbar from '../components/Navbar';
+import Navbar from '../components/Navbar'
 
-import GlobalStyle from '../GlobalStyle';
+import GlobalStyle from '../GlobalStyle'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
       <Navbar />
       <Component {...pageProps} />
     </>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp
