@@ -52,6 +52,7 @@ const Button = styled.button`
   background-color: var(--theme-background-secondary);
   padding: 1.2em 1.6em;
   border: none;
+  border-radius: var(--theme-border-radius);
 
   &:hover {
     background-color: var(--theme-background-secondary);

@@ -1,5 +1,11 @@
 import Head from 'next/head'
+import styled from 'styled-components'
+
+// Components
 import HeroSlider from '../components/HeroSlider'
+import GaleriePreview from '../components/pages-components/GaleriePreview'
+import QuickOverview from '../components/pages-components/QuickOverview'
+import TeamPresentation from '../components/pages-components/TeamPresentation'
 import Section from '../components/Section'
 
 export default function Home() {
@@ -14,10 +20,13 @@ export default function Home() {
       <main>
         <HeroSlider idToGo="quick-overview" />
         <Section id="quick-overview">
-          <>
-            sheeeshhh adawd aw
-            <div>d</div>
-          </>
+          <QuickOverview />
+        </Section>
+        <Section id="team-presentation" darker>
+          <TeamPresentation />
+        </Section>
+        <Section id="team-presentation" darker fullSize>
+          <GaleriePreview />
         </Section>
       </main>
     </>

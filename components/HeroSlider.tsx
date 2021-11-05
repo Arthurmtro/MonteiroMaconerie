@@ -100,8 +100,8 @@ const Quote = styled.blockquote`
 
 const Title = styled.h1`
   text-transform: uppercase;
-  font-weight: 400;
-  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-title);
+  font-size: var(--font-size-hero);
   margin-left: 0.3em;
 `
 

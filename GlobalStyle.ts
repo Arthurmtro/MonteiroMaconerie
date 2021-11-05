@@ -4,6 +4,7 @@ const GlobalStyle = createGlobalStyle`
   :root {
     --theme-background-primary: #463F32;
     --theme-background-secondary: #BF6130;
+    --theme-background-muted: #463F32BC;
     --theme-primary: #FFFFFFF7;
     --theme-secondary: #00173C;
     --theme-alt: #0BBF53;
@@ -11,11 +12,19 @@ const GlobalStyle = createGlobalStyle`
 
     --theme-white: #FFFFFB;
     --theme-dark: #1C160D;
+    --theme-muted: #FFFFFF99;
 
     // Default
-    --font-size-title: calc(3rem);
-    --font-size-medium: calc(1.1875rem);
-    --font-size-small : calc(0.8rem);
+    --font-size-hero: 3rem;
+    --font-size-title: 2.2rem;
+    --font-size-medium: 1.1875rem;
+    --font-size-small : 0.8rem;
+
+    --font-weight-title: 400;
+    --font-weight-thin: 200;
+    --font-weight-heavy: bold;
+
+    --theme-border-radius: 5px;
   }
 
   html {
