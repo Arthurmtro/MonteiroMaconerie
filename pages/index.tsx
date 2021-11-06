@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import styled from 'styled-components'
 
 // Components
 import HeroSlider from '../components/HeroSlider'
+import CustomersReviews from '../components/pages-components/CustomersReviews'
 import GaleriePreview from '../components/pages-components/GaleriePreview'
 import QuickOverview from '../components/pages-components/QuickOverview'
 import TeamPresentation from '../components/pages-components/TeamPresentation'
@@ -18,15 +18,18 @@ export default function Home() {
       </Head>
 
       <main>
-        <HeroSlider idToGo="quick-overview" />
-        <Section id="quick-overview">
+        <HeroSlider idToGo="presentation-rapide" />
+        <Section id="presentation-rapide">
           <QuickOverview />
         </Section>
-        <Section id="team-presentation" darker>
+        <Section id="presentation-equipe" darker>
           <TeamPresentation />
         </Section>
-        <Section id="team-presentation" darker fullSize>
+        <Section id="previsualisation-galerie" darker fullSize>
           <GaleriePreview />
+        </Section>
+        <Section id="avis-clients">
+          <CustomersReviews />
         </Section>
       </main>
     </>

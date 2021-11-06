@@ -5,7 +5,7 @@ interface IQuickOverviewProps {}
 export default function QuickOverview({}: any) {
   return (
     <QuickOverviewWrapper>
-      <h3>Ce que nous vous proposons</h3>
+      <h3>Ce que je vous propose</h3>
       <Container>
         <div>
           <Title>Terasse</Title>

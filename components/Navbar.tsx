@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import DefaultLink from 'next/link'
+import NextLink from 'next/link'
 import Image from 'next/image'
 
 import Link from './Link'
@@ -87,27 +87,25 @@ export default function Navbar() {
 
         {/* <Logo src="/images/logo.png" alt="monteiro-maconnerie logo" width="80" height="60" /> */}
         <Links>
-          <DefaultLink href="/">
-            <li>
-              <span>Accueil</span>
-              <div />
-            </li>
-          </DefaultLink>
-          <PlusIcon />
-          <DefaultLink href="/">
-            <li>
-              <span>A propos</span>
-              <div />
-            </li>
-          </DefaultLink>
-          <PlusIcon />
-          <DefaultLink href="/">
-            <li>
-              <span>Services</span>
-              <div />
-            </li>
-          </DefaultLink>
-          <PlusIcon />
+          <li>
+            <NextLink href="/">
+              <>
+                <span>Accueil</span>
+                <div />
+              </>
+            </NextLink>
+          </li>
+          <li>
+            <PlusIcon />
+          </li>
+          <li>
+            <NextLink href="/">
+              <>
+                <span>Galerie</span>
+                <div />
+              </>
+            </NextLink>
+          </li>
         </Links>
         <Link text="Prendre RDV" href="/contact" />
       </DesktopNav>
@@ -116,7 +114,13 @@ export default function Navbar() {
 }
 
 const Header = styled.nav`
+  /* position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000; */
   background: linear-gradient(to right, var(--theme-background-secondary) 30%, #fffffb 30%);
+  box-shadow: 0px 0px 25px #00000030;
 `
 
 const QuickNav = styled.div`
@@ -171,18 +175,19 @@ const Links = styled.ul`
   align-items: center;
 
   & li {
-    cursor: pointer;
-    margin: 0 1em;
     font-size: var(--font-size-medium);
+    margin: 0 1em;
 
-    & * {
+    & span {
       color: var(--theme-secondary);
+      cursor: pointer;
     }
 
     & div {
-      width: 0%;
       border-bottom: 2px solid #ffffff;
       transition: all 0.4s ease-out;
+      cursor: pointer;
+      width: 0%;
     }
 
     &:hover {

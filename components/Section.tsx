@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 interface ISectionProps {
-  children: JSX.Element | string
+  children: JSX.Element | JSX.Element[] | string
   darker?: boolean
   fullSize?: boolean
   id?: string

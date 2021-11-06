@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import GalerieImage from '../GalerieImage'
 import Link from '../Link'
 
 interface IGaleriePreviewProps {}
@@ -11,20 +12,20 @@ export default function GaleriePreview({}: any) {
         <Link text="Voir toutes les images" />
       </SeeMore>
       <ImagesWrapper>
-        <ImageBox />
-        <ImageBox />
+        <GalerieImage />
+        <GalerieImage />
       </ImagesWrapper>
       <ImagesWrapper>
-        <ImageBox />
-        <ImageBox />
+        <GalerieImage />
+        <GalerieImage />
       </ImagesWrapper>
     </Container>
   )
 }
 
-const Container = styled.div`
+const Container = styled.article`
   min-width: 100%;
-  max-height: 60vh;
+  max-height: 100%;
 `
 
 const SeeMore = styled.div`
@@ -47,19 +48,4 @@ const ImagesWrapper = styled.div`
   height: 43vh;
   display: flex;
   justify-content: center;
-`
-
-const ImageBox = styled.div`
-  height: 100%;
-  width: 100%;
-  background: url('https://source.unsplash.com/500x950/?worker');
-  border: 1px solid var(--theme-background-primary);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  &:hover {
-    filter: brightness(40%) grayscale(60%);
-    -webkit-filter: brightness(40%) grayscale(60%);
-  }
 `

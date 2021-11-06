@@ -47,7 +47,7 @@ export default function TeamPresentation({}: any) {
         </YearsInfos>
       </div>
 
-      <div id="right">
+      <WorkerImage id="right">
         <svg xmlns="http://www.w3.org/2000/svg" width="643" height="591" viewBox="0 0 643 591">
           <defs>
             <clipPath id="clip-path">
@@ -113,7 +113,7 @@ export default function TeamPresentation({}: any) {
             </g>
           </g>
         </svg>
-      </div>
+      </WorkerImage>
     </Container>
   )
 }
@@ -186,4 +186,10 @@ const Mutedtext = styled.p`
   color: var(--theme-muted);
   font-weight: var(--font-weight-thin);
   font-size: var(--font-size-small);
+`
+
+const WorkerImage = styled.div`
+  & svg {
+    width: 30rem;
+  }
 `

@@ -1,4 +1,4 @@
-import DefaultLink from 'next/link'
+import NextLink from 'next/link'
 import styled from 'styled-components'
 
 interface ILinkProps {
@@ -15,7 +15,7 @@ export default function Link({ text, as = 'button', href = '/' }: ILinkProps) {
   return (
     <LinkStyle>
       {as === 'text' ? (
-        <DefaultLink href={href}>
+        <NextLink href={href}>
           <Anchor>
             {text}
             {/* <svg width="9.501" height="16.582" viewBox="0 0 9.501 16.582">
@@ -31,11 +31,11 @@ export default function Link({ text, as = 'button', href = '/' }: ILinkProps) {
               />
             </svg> */}
           </Anchor>
-        </DefaultLink>
+        </NextLink>
       ) : (
-        <DefaultLink href={href}>
+        <NextLink href={href}>
           <Button onClick={handleClick}>{text}</Button>
-        </DefaultLink>
+        </NextLink>
       )}
     </LinkStyle>
   )
@@ -49,12 +49,14 @@ const LinkStyle = styled.div`
 `
 
 const Button = styled.button`
+  transition: all 0.2s ease-in-out;
   background-color: var(--theme-background-secondary);
   padding: 1.2em 1.6em;
   border: none;
   border-radius: var(--theme-border-radius);
 
   &:hover {
+    transform: scale(1.05);
     background-color: var(--theme-background-secondary);
   }
 `

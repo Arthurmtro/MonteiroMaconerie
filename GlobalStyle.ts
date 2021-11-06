@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
 
     --font-weight-title: 400;
     --font-weight-thin: 200;
+    --font-weight-normal: normal;
     --font-weight-heavy: bold;
 
     --theme-border-radius: 5px;
