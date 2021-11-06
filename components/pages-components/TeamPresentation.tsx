@@ -189,6 +189,11 @@ const Mutedtext = styled.p`
 `
 
 const WorkerImage = styled.div`
+  display: none;
+
+  @media only screen and (min-width: 840px) {
+    display: block;
+  }
   & svg {
     width: 30rem;
   }

@@ -9,7 +9,7 @@ export default function GaleriePreview({}: any) {
     <Container>
       <SeeMore>
         <h3>Galerie des projets</h3>
-        <Link text="Voir toutes les images" />
+        <Link text="Voir toutesla galerie" />
       </SeeMore>
       <ImagesWrapper>
         <GalerieImage />
@@ -34,13 +34,24 @@ const SeeMore = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+
+  @media only screen and (min-width: 840px) {
+    flex-direction: row;
+  }
 
   & h3 {
     color: var(--theme-primary);
     font-weight: var(--font-weight-title);
     font-size: var(--font-size-title);
     text-align: center;
-    padding-right: 15rem;
+    padding-right: 0;
+    padding: 2rem 0;
+
+    @media only screen and (min-width: 840px) {
+      padding: 0;
+      padding-right: 15rem;
+    }
   }
 `
 

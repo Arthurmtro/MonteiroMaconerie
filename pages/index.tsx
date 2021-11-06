@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 // Components
 import HeroSlider from '../components/HeroSlider'
-import CustomersReviews from '../components/pages-components/CustomersReviews'
+// import CustomersReviews from '../components/pages-components/CustomersReviews'
 import GaleriePreview from '../components/pages-components/GaleriePreview'
 import QuickOverview from '../components/pages-components/QuickOverview'
 import TeamPresentation from '../components/pages-components/TeamPresentation'
@@ -28,9 +28,9 @@ export default function Home() {
         <Section id="previsualisation-galerie" darker fullSize>
           <GaleriePreview />
         </Section>
-        <Section id="avis-clients">
+        {/* <Section id="avis-clients">
           <CustomersReviews />
-        </Section>
+        </Section> */}
       </main>
     </>
   )

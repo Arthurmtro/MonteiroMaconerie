@@ -58,7 +58,12 @@ const ActionContaner = styled.div<{ hover: boolean }>`
   position: relative;
   z-index: 10;
   top: -50%;
-  right: -50%;
+  right: -25%;
+
+  @media only screen and (min-width: 840px) {
+    top: -50%;
+    right: -50%;
+  }
 
   & svg {
     border-radius: var(--theme-border-radius);
@@ -76,10 +81,14 @@ const ActionContaner = styled.div<{ hover: boolean }>`
     padding-top: ${({ hover }) => (hover ? '5%' : '8%')};
     opacity: ${({ hover }) => (hover ? '1' : '0')};
     position: relative;
-    right: 40%;
+    right: 20%;
     text-transform: uppercase;
     font-size: var(--font-size-medium);
     font-weight: var(--font-weight-heavy);
     color: var(--theme-primary);
+
+    @media only screen and (min-width: 840px) {
+      right: 40%;
+    }
   }
 `

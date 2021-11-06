@@ -114,13 +114,13 @@ export default function Navbar() {
 }
 
 const Header = styled.nav`
-  /* position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1000; */
   background: linear-gradient(to right, var(--theme-background-secondary) 30%, #fffffb 30%);
   box-shadow: 0px 0px 25px #00000030;
+  display: none;
+
+  @media only screen and (min-width: 840px) {
+    display: block;
+  }
 `
 
 const QuickNav = styled.div`

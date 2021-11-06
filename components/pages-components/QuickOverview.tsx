@@ -69,14 +69,20 @@ const QuickOverviewWrapper = styled.div`
     font-weight: var(--font-weight-title);
     font-size: var(--font-size-title);
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 `
 
 const Container = styled.div`
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: column;
+
+  @media only screen and (min-width: 840px) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+  }
 
   & div {
     display: flex;
@@ -84,12 +90,18 @@ const Container = styled.div`
     align-items: center;
     flex-direction: column;
     background-color: var(--theme-background-primary);
-    margin: 0 1rem;
+    margin: 0.5rem auto;
     padding: 2rem 2rem 0 2rem;
     border-radius: var(--theme-border-radius);
     max-width: 20rem;
-    min-height: 17rem;
+    min-height: 15rem;
     transition: all 0.2s ease-in;
+
+    @media only screen and (min-width: 840px) {
+      margin: 0 1rem;
+      max-width: 20rem;
+      min-height: 17rem;
+    }
 
     &:hover {
       transform: scale(1.025);

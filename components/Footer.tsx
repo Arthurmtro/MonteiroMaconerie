@@ -5,8 +5,19 @@ import NextLink from 'next/link'
 import Link from './Link'
 import FacebookIcon from '../icons/FacebookIcon'
 import PlusIcon from '../icons/PlusIcon'
+import GpsIcon from '../icons/GpsIcon'
 
 export default function Footer({}: any) {
+  const quickLinks = [
+    { label: 'Accueil', link: '/' },
+    { label: 'Presentation Rapide', link: '/#presentation-rapide' },
+    { label: 'Presentation Equipe', link: '/#presentation-equipe' },
+    { label: 'Previsualisation galerie', link: '/#previsualisation-galerie' },
+    { label: 'Avis clients', link: '/#avis-clients' },
+    { label: 'Galerie', link: '/galerie' },
+    { label: 'Contact', link: '/contact' },
+  ]
+
   return (
     <Container>
       <TopSection>
@@ -23,45 +34,39 @@ export default function Footer({}: any) {
         </About>
         <UsefullLinks>
           <h5>Infos utiles</h5>
-          <NextLink href="/">
-            <Anchor>
-              <PlusIcon />
-              Accueil
-            </Anchor>
-          </NextLink>
-          <NextLink href="/#presentation-rapide">
-            <Anchor>
-              <PlusIcon />
-              Presentation Rapide
-            </Anchor>
-          </NextLink>
-          <NextLink href="/#presentation-equipe">
-            <Anchor>
-              <PlusIcon />
-              Presentation Equipe
-            </Anchor>
-          </NextLink>
-          <NextLink href="/#previsualisation-galerie">
-            <Anchor>
-              <PlusIcon />
-              Previsualisation galerie
-            </Anchor>
-          </NextLink>
-          <NextLink href="/#avis-clients">
-            <Anchor>
-              <PlusIcon />
-              Avis clients
-            </Anchor>
-          </NextLink>
+          {quickLinks.map(({ label, link }, key) => (
+            <NextLink key={key} href={link}>
+              <Anchor>
+                <PlusIcon />
+                {label}
+              </Anchor>
+            </NextLink>
+          ))}
         </UsefullLinks>
-        <section>
-          <h5>Galerie</h5>
-        </section>
+        <LocationInfos>
+          <p>
+            20 Rue de la Bellière, <br /> 49410 Mauges sur Loire
+          </p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2702.599345362342!2d-1.0196623843780013!3d47.36121967916921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480619ff0c76ba49%3A0x556e5eb07c21917b!2sSas%20Monteiro%20ma%C3%A7onnerie!5e0!3m2!1sen!2sfr!4v1636220778880!5m2!1sen!2sfr"
+            width="300"
+            height="200"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+          ></iframe>
+        </LocationInfos>
       </LinksSection>
       <CopyrightSection>
         <div>
           <Image src="/images/logo.png" alt="logo monteiro maconnerie" width={58} height={62} />
-          <p>Copyright © 2021 Monteiro Arthur. Tous droits réservés.</p>
+          <h4>
+            Copyright © 2021{' '}
+            <a href="https://www.mtro.fr" target="_blank" rel="noreferrer">
+              Monteiro Arthur.
+            </a>{' '}
+            Tous droits réservés.
+          </h4>
           <FacebookIcon size={32} rounded />
         </div>
       </CopyrightSection>
@@ -87,29 +92,26 @@ const TopSection = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
+
+  @media only screen and (min-width: 840px) {
+    flex-direction: row;
+  }
 
   & h3 {
     color: var(--theme-primary);
     font-weight: var(--font-weight-title);
     font-size: var(--font-size-title);
     text-align: center;
-    padding-right: 15rem;
+    padding-right: 0;
+
+    @media only screen and (min-width: 840px) {
+      padding-right: 15rem;
+    }
   }
 
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--theme-muted);
-`
-
-const LinksSection = styled.section`
-  width: 60rem;
-  padding: 0 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  & section {
-    width: 15rem;
-  }
 `
 
 const About = styled.section`
@@ -121,12 +123,34 @@ const About = styled.section`
   }
 `
 
+const LinksSection = styled.section`
+  width: 60rem;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+
+  & section {
+    width: 15rem;
+  }
+
+  @media only screen and (min-width: 840px) {
+    flex-direction: row;
+    padding: 0 1rem;
+  }
+`
+
 const UsefullLinks = styled.section`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  margin: 3rem 0;
+  margin: 2rem 0;
+
+  @media only screen and (min-width: 840px) {
+    margin: 3rem 0;
+  }
 `
 
 const Anchor = styled.a`
@@ -141,6 +165,19 @@ const Anchor = styled.a`
 const CopyrightSection = styled.section`
   background-color: var(--theme-background-secondary);
   width: 100vw;
+  font-size: var(--font-size-small);
+  & a {
+    color: var(--theme-background-primary);
+    font-weight: var(--font-weight-heavy);
+  }
+
+  & span {
+    display: none;
+
+    @media only screen and (min-width: 840px) {
+      display: block;
+    }
+  }
 
   & div {
     margin: 0 auto;
@@ -149,5 +186,26 @@ const CopyrightSection = styled.section`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    & svg {
+      display: none;
+
+      @media only screen and (min-width: 840px) {
+        display: block;
+      }
+    }
+  }
+`
+
+const Logo = styled(Image)``
+const LocationInfos = styled.h4`
+  margin: 0 auto;
+  color: var(--theme-primary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-normal);
+  text-align: center;
+
+  & h4 {
+    text-align: left;
   }
 `
